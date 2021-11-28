@@ -22,3 +22,4 @@ router.route('/admin/product/:id')
             .delete(isAuthenticatedUser, deleteProduct);
 
 module.exports = router;
+qwertyuio
