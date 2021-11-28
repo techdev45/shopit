@@ -1,0 +1,50 @@
+[
+    {
+      "name": "Laptops",
+      "price": "45.99",
+      "Description": "This project is a good learning project to get comfortable with soldering and programming an Arduino.",
+      "Ratings": 1.65,
+      "images" : [{
+          "public_id" : "products/tzfsnrli3szrdnb4jgge",
+          "url" : "https://res.cloudinary.com/shopit/image/upload/v1606231282/products/tzfsnrli3szrdnb4jgge.jpg"
+      }],
+      "category" : "Electronics",
+      "seller" : "umair",
+      "stock" : 100,
+      "numberOfReviews" : 70, 
+      "reviews" : []
+    },
+
+    {
+        "name": "Electronics",
+        "price": "45.99",
+        "Description": "This project is a good learning project to get comfortable with soldering and programming an Arduino.",
+        "Ratings": 1.15,
+        "images" : [{
+            "public_id" : "products/photo-1603302576837-37561b2e2302",
+            "url" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pcmag.com%2Fpicks%2Fthe-best-laptops&psig=AOvVaw3acDf_PdRdd-ADNiL7wraj&ust=1635876406254000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi2lN3g9_MCFQAAAAAdAAAAABAD"
+        }],
+        "category" : "Electronics",
+        "seller" : "umair",
+        "stock" : 50,
+        "numberOfReviews" : 32, 
+        "reviews" : []
+      },
+
+      {
+        "name": "Home",
+        "price": "45.99",
+        "Description": "This project is a good learning project to get comfortable with soldering and programming an Arduino.",
+        "Ratings": 1.11,
+        "images" : [{
+            "public_id" : "products/0CAsQjRxqFwoTCPi2lN3g9_MCFQAAAAAdAAAAABAD",
+            "url" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pcmag.com%2Fpicks%2Fthe-best-laptops&psig=AOvVaw3acDf_PdRdd-ADNiL7wraj&ust=1635876406254000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi2lN3g9_MCFQAAAAAdAAAAABAD"
+        }],
+        "category" : "Electronics",
+        "seller" : "umair",
+        "stock" : 50,
+        "numberOfReviews" : 32, 
+        "reviews" : []
+      }
+    
+  ]
