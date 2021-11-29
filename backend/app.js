@@ -21,7 +21,7 @@ const errorMiddleware = require('./middlewares/errors')
 
 
 app.use(express.json());
-// app.use(cookieParser())
+app.use(cookieParser())
 
 
 
