@@ -29,7 +29,8 @@ avatar:{
         type: String,
         required:true
         }
-}, enumerablerole:{
+},
+role:{
     type: String,
     default:'user'
 },
