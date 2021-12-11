@@ -31,10 +31,6 @@ nav {
   padding: 1rem 1rem;
 }
 
-#search_btn {
-  background-color: #febd69;
-}
-
 .input-group {
   width: 90%;
   margin-right: 35%;
@@ -44,6 +40,12 @@ nav {
   height: 2.4rem;
   padding: 1rem;
 }
+
+#search_btn {
+  background-color: #febd69;
+}
+
+
 
 #login_btn,
 #view_btn {
