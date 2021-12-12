@@ -41,7 +41,7 @@ const Home = ({ match }) => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, products, error, productsCount, resPerPage, letfilteredProductsCount } = useSelector(state => state.products)
+    const { loading, products, error, productsCount, resPerPage, filteredProductsCount } = useSelector(state => state.products)
 
     const keyword = match.params.keyword
 
@@ -62,7 +62,7 @@ const Home = ({ match }) => {
 
             let count = productsCount;
             if(keyword) {
-                count = letfilteredProductsCount
+                count = filteredProductsCount
             }
 
     return (

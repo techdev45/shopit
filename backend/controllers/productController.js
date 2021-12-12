@@ -37,7 +37,7 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) =>{
     
     
     let products = await apiFeatures.query;
-    letfilteredProductsCount = products.length;
+    let filteredProductsCount = products.length;
 
     apiFeatures.pagination(resPerPage)
     products = await apiFeatures.query;
@@ -47,7 +47,7 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) =>{
             success: true,
             productsCount,
             resPerPage,
-            letfilteredProductsCount,
+            filteredProductsCount,
             products
         })
     // const products = await Product.find();
