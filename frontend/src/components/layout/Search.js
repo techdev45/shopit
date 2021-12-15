@@ -31,12 +31,10 @@ const Search = ({ history }) => {
                 </div>
             </div>
         </form>
-        
     )
 }
 
 export default Search
-
 
 // import React, { useState } from 'react'
 
