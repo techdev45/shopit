@@ -42,6 +42,8 @@ const Header = () => {
                         <span className="ml-1" id="cart_count">{cartItems.length}</span>
                     </Link>
 
+                    
+
                     {user ? (
                         <div className="ml-4 dropdown d-inline">
                             <Link to="#!" className="btn dropdown-toggle text-white mr-4" 
@@ -64,7 +66,7 @@ const Header = () => {
                                     <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
                                 )}
                                 <Link className="dropdown-item" to="/orders/me">Orders</Link>
-                                <Link className="dropdown-item" to="/me">Profile</Link>
+                                <Link className="dropdown-item" to="/me">Profile</Link>                                
                                 <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
                                     Logout
                                 </Link>
