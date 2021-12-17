@@ -17,7 +17,8 @@ process.on('uncaughtException', err => {
 
 
 //setting up confiq file
-dotenv.config({ path: 'backend/config/config.env' })
+if(process.env.NODE_ENV === 'PRODUCTION') require('dotenv').dotenvconfig({ path:'backend/config/config.env'})
+
 
 
 
