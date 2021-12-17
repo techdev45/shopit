@@ -9,6 +9,7 @@ const fileUpload = require('express-fileupload')
 
 
 const errorMiddleware = require('./middlewares/errors')
+const path = require("path");
 
 
 // const connectDatabase = 'mongodb+srv://meiri45:meiriab12cd34@cluster0.7xddh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -37,6 +38,23 @@ app.use(fileUpload());
 const products = require('./routes/product');
 const auth = require('./routes/auth');
 const order = require('./routes/order');
+
+// ---------------Deployment -----------------
+__dirname = path.resolve();
+if(process.env.NODE_ENV === "PRODUCTION") {
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+  app.get('*', (req,res) => {
+    res.sendFile(path.resolve(__dirname,"frontend", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
+
+
+// ---------------Deployment -----------------
 
 app.use('/api/v1', products)
 app.use('/api/v1', auth)
