@@ -50,7 +50,7 @@ const Header = () => {
             <div className="ml-4 dropdown d-inline">
               <Link
                 to="#!"
-                className="btn dropdown-toggle text-white mr-4"
+                className="btn Dropdown-toggle text-white mr-4"
                 type="button"
                 id="dropDownMenuButton"
                 data-toggle="dropdown"
@@ -99,6 +99,23 @@ const Header = () => {
               </Link>
             )
           )}
+          {/* ......................................................... */}
+          <div className="menu">
+            {user && user.role === "admin" && (
+              <Link className="dropdown-item" to="/dashboard">
+                Dashboard
+              </Link>
+            )}
+            <Link
+              className="dropdown-item text-danger"
+              to="/"
+              onClick={logoutHandler}
+            >
+              Logout
+            </Link>
+          </div>
+
+          {/* ......................................................... */}
         </div>
       </nav>
     </Fragment>

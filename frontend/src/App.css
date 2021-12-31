@@ -546,6 +546,13 @@ a[data-toggle="collapse"] {
   right: 20px;
   transform: translateY(-50%);
 }
+.menu {
+  display: flex;
+}
+.menu .dropdown-item {
+  color: rgb(0, 4, 255);
+  background: #232f3e;
+}
 
 ul ul a {
   font-size: 1rem !important;
