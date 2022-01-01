@@ -19,18 +19,18 @@ const NewProduct = ({ history }) => {
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
+    "Default",
     "Electronics",
     "Cameras",
     "Laptops",
     "Accessories",
     "Headphones",
-    "Food",
-    "Books",
-    "Clothes/Shoes",
-    "Beauty/Health",
-    "Sports",
-    "Outdoor",
-    "Home",
+    "Graphic Card",
+    "Keyboards",
+    "LED",
+    "Hard Drives",
+    "Cooling Fans",
+    "PC casing",
   ];
 
   const alert = useAlert();

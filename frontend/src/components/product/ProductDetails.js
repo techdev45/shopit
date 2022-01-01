@@ -202,7 +202,7 @@ const ProductDetails = ({ match }) => {
               <hr />
 
               <h4 className="mt-2">Description:</h4>
-              <h3>{product.description}</h3>
+              <h3 style={{ fontSize: 18 }}>{product.description}</h3>
 
               <hr />
               <p id="product_seller mb-3">

@@ -8,12 +8,13 @@ const crypto = require("crypto");
 const cloudinary = require("cloudinary");
 
 /// Register a user   => /api/v1/register
+// Register a user   => /api/v1/register
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
-  // const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
-  //   folder: "avatars",
-  //   width: 150,
-  //   crop: "scale",
-  // });
+  const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+    folder: "avatars",
+    width: 150,
+    crop: "scale",
+  });
 
   const { name, email, password } = req.body;
 
@@ -22,8 +23,8 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     email,
     password,
     avatar: {
-      public_id: "samples/bike",
-      url: "https://res.cloudinary.com/dqnpgocdp/image/upload/v1638043755/samples/bike.jpg",
+      public_id: result.public_id,
+      url: result.secure_url,
     },
   });
 
