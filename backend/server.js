@@ -27,8 +27,8 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-const PORT = process.env.PORT | 6565;
-const server = app.listen(PORT, () => {
+
+const server = app.listen(8000, () => {
   console.log(
     `Server is started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode. `
   );
