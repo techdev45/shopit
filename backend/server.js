@@ -30,7 +30,9 @@ cloudinary.config({
 
 const server = app.listen(8000, () => {
   console.log(
-    `Server is started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode. `
+    `Server is started on PORT: ${process.env.PORT || 8080} in ${
+      process.env.NODE_ENV
+    } mode. `
   );
 });
 
