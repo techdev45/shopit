@@ -28,14 +28,14 @@ app.use("/api/v1", products);
 app.use("/api/v1", auth);
 app.use("/api/v1", order);
 
-const __dirname = path.resolve();
+const __dirnamee = path.resolve();
 
 if (process.env.NODE_ENV === "DEVELOPMENT") {
   console.log("running");
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.use(express.static(path.join(__dirnamee + "../frontend/build")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+    res.sendFile(path.resolve(__dirnamee + "../frontend/build/index.html"));
   });
 } else {
   app.get("/", (req, res) => {
