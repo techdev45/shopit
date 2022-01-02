@@ -30,7 +30,8 @@ app.use("/api/v1", order);
 
 const __dirnamee = path.resolve();
 
-if (process.env.NODE_ENV === "PRODUCTION") {
+if (process.env.NODE_ENV === "DEVELOPMENT") {
+  console.log("running");
   app.use(express.static(path.join(__dirnamee, "../frontend/build")));
 
   app.get("*", (req, res) => {
