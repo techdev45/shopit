@@ -626,12 +626,6 @@ ul.CTAs a {
 }
 
 /* About Page */
-#about {
-  background: #e8cbc0;
-  background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
-  background: linear-gradient(to right, #e8cbc0, #636fa4);
-  min-height: 100vh;
-}
 
 /* .social-link {
   width: 30px;
@@ -670,4 +664,9 @@ ul.CTAs a {
 }
 .display-4 {
   color: #febd69;
+}
+#about-button {
+  background-color: #232f3e;
+  color: #fff;
+  margin-bottom: 20px;
 }

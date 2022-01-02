@@ -38,6 +38,8 @@ import UsersList from "./components/admin/UsersList";
 import UpdateUser from "./components/admin/UpdateUser";
 import ProductReviews from "./components/admin/ProductReviews";
 
+import About from "./components/about/About";
+
 import ProtectedRoute from "./components/route/ProtectedRoute";
 import { loadUser } from "./actions/userActions";
 import { useSelector } from "react-redux";
@@ -86,7 +88,7 @@ function App() {
               <ProtectedRoute path="/payment" component={Payment} />
             </Elements>
           )}
-
+          <Route path="/About" component={About} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/password/forgot" component={ForgotPassword} exact />

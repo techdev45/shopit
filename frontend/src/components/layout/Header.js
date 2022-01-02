@@ -4,6 +4,7 @@ import { Route, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { logout } from "../../actions/userActions";
+import About from "../about/About";
 
 import Search from "./Search";
 
@@ -114,6 +115,9 @@ const Header = () => {
               Logout
             </Link>
           </div>
+          {/* <Link className="dropdown-item text-danger" to="/About">
+            About Us
+          </Link> */}
 
           {/* ......................................................... */}
         </div>
