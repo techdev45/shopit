@@ -11,7 +11,7 @@ const Sidebar = () => {
               <i className="fa fa-tachometer"></i> Dashboard
             </Link>
           </li>
-
+          {/* 
           <li>
             <a
               href="#productSubmenu"
@@ -34,7 +34,7 @@ const Sidebar = () => {
                 </Link>
               </li>
             </ul>
-          </li>
+          </li> */}
           {/* ......................................................... */}
           <li>
             <Link to="/admin/products">
