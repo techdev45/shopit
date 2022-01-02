@@ -44,6 +44,8 @@ import { useSelector } from "react-redux";
 import store from "./store";
 import axios from "axios";
 
+// import About from "./components/layout/About";
+
 // Payment
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -69,7 +71,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <aboutUs />
+
         <div className="container container-fluid">
           <Route path="/" component={Home} exact />
           <Route path="/search/:keyword" component={Home} />
@@ -158,6 +160,7 @@ function App() {
 
         {!loading && (!isAuthenticated || user.role !== "admin") && <Footer />}
       </div>
+      {/* <About /> */}
     </Router>
   );
 }
