@@ -12,7 +12,7 @@ const About = () => {
       </div>
       <div id="cards">
         <div class="col-xl-4 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm pb-5">
+          <div class=" rounded shadow-sm pb-5" id="bg">
             <img
               src="/images/shayan.jpeg"
               alt=""
@@ -20,8 +20,8 @@ const About = () => {
               id="image"
             />
             <div id="text">
-              <h5 class="mb-0">Shayn Iqbal Khan Niazi</h5>
-              <span class="small text-uppercase text-muted">
+              <h4 class="mb-0 text-white">Shayn Iqbal Khan Niazi</h4>
+              <span class="text-white text-uppercase text-white text-muted">
                 3811 FBAS/BSSE/F18
               </span>
             </div>
@@ -29,7 +29,7 @@ const About = () => {
         </div>
 
         <div class="col-xl-4 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm pb-5">
+          <div class="rounded shadow-sm pb-5" id="bg">
             <img
               src="/images/umair.jpeg"
               alt=""
@@ -38,8 +38,8 @@ const About = () => {
               id="image"
             />
             <div id="text">
-              <h5 class="mb-0">Umair Khalid</h5>
-              <span class="small text-uppercase text-muted">
+              <h4 class="mb-0 text-white">Umair Khalid</h4>
+              <span class="medium text-uppercase text-muted">
                 3833 FBAS/BSSE/F18
               </span>
             </div>
@@ -47,7 +47,7 @@ const About = () => {
         </div>
 
         <div class="col-xl-4 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm pb-5">
+          <div class=" rounded shadow-sm pb-5" id="bg">
             <img
               src="/images/haider.jpeg"
               alt=""
@@ -57,8 +57,8 @@ const About = () => {
               id="image"
             />
             <div id="text">
-              <h5 class="mb-0">Haider Naeem</h5>
-              <span class="small text-uppercase text-muted">
+              <h4 class="mb-0 text-white">Haider Naeem</h4>
+              <span class="text-white text-uppercase text-muted">
                 3767 FBAS/BSSE/F18
               </span>
             </div>

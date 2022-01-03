@@ -637,6 +637,7 @@ ul.CTAs a {
 }
 #text {
   text-align: center;
+  font-weight: bold;
 }
 
 #card {
@@ -644,10 +645,14 @@ ul.CTAs a {
 }
 .display-4 {
   color: #febd69;
+  font-weight: bold;
 }
 #about-button {
   background-color: #232f3e;
   color: #fff;
   max-width: 500px;
   margin: 20px auto;
+}
+#bg {
+  background-color: #232f3e;
 }
