@@ -103,7 +103,7 @@ const Header = () => {
           {/* ......................................................... */}
           <div className="menu">
             {user && user.role === "admin" && (
-              <Link className="dropdown-item" to="/dashboard">
+              <Link className="dropdown-item text-success" to="/dashboard">
                 Dashboard
               </Link>
             )}
@@ -115,9 +115,6 @@ const Header = () => {
               Logout
             </Link>
           </div>
-          {/* <Link className="dropdown-item text-danger" to="/About">
-            About Us
-          </Link> */}
 
           {/* ......................................................... */}
         </div>

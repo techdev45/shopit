@@ -627,26 +627,6 @@ ul.CTAs a {
 
 /* About Page */
 
-/* .social-link {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  border-radius: 50%;
-  transition: all 0.3s;
-  font-size: 0.9rem;
-} */
-
-/* .social-link:hover,
-.social-link:focus {
-  background: #ddd;
-  text-decoration: none;
-  color: #555;
-} */
-
 #cards {
   display: flex;
   justify-content: center;
@@ -668,5 +648,6 @@ ul.CTAs a {
 #about-button {
   background-color: #232f3e;
   color: #fff;
-  margin-bottom: 20px;
+  max-width: 500px;
+  margin: 20px auto;
 }
