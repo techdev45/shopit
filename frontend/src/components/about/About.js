@@ -11,7 +11,7 @@ const About = () => {
         </div>
       </div>
       <div id="cards">
-        <div class="col-xl-4 col-sm-6 mb-5">
+        <div class="col-xl-4 col-sm-10 mb-5">
           <div class=" rounded shadow-sm pb-5" id="bg">
             <img
               src="/images/shayan.jpeg"
@@ -28,7 +28,7 @@ const About = () => {
           </div>
         </div>
 
-        <div class="col-xl-4 col-sm-6 mb-5">
+        <div class="col-xl-4 col-sm-10 mb-5">
           <div class="rounded shadow-sm pb-5" id="bg">
             <img
               src="/images/umair.jpeg"
@@ -46,7 +46,7 @@ const About = () => {
           </div>
         </div>
 
-        <div class="col-xl-4 col-sm-6 mb-5">
+        <div class="col-xl-4 col-sm-10 mb-5">
           <div class=" rounded shadow-sm pb-5" id="bg">
             <img
               src="/images/haider.jpeg"
