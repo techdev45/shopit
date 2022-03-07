@@ -5,7 +5,7 @@ import Vsidebar from "./Vsidebar";
 
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import { newProduct, clearErrors } from "../../actions/productActions";
+import { vNewProduct, clearErrors } from "../../actions/productActions";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
 
 const VnewProduct = ({ history }) => {
@@ -66,7 +66,7 @@ const VnewProduct = ({ history }) => {
       formData.append("images", image);
     });
 
-    dispatch(newProduct(formData));
+    dispatch(vNewProduct(formData));
   };
 
   const onChange = (e) => {
