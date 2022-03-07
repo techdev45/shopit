@@ -28,7 +28,7 @@ const Header = () => {
         <div className="col-12 col-md-3">
           <div className="navbar-brand">
             <Link to="/">
-              <img src="/images/LOGO-WEB-GG.png" style={{ width: "150px" }} />
+              <img src="/images/logo.png" style={{ width: "150px" }} />
             </Link>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Header = () => {
             <div className="ml-4 dropdown d-inline">
               <Link
                 to="#!"
-                className="btn Dropdown-toggle text-white mr-4"
+                className="btn dropdown-toggle text-white mr-4"
                 type="button"
                 id="dropDownMenuButton"
                 data-toggle="dropdown"
@@ -60,8 +60,7 @@ const Header = () => {
               >
                 <figure className="avatar avatar-nav">
                   <img
-                    src="https://res.cloudinary.com/shopit-web/image/upload/v1639152946/5_l7gclt.jpg"
-                    // src="{user.avatar && user.avatar.url}"
+                    src={user.avatar && user.avatar.url}
                     alt={user && user.name}
                     className="rounded-circle"
                   />
@@ -69,21 +68,24 @@ const Header = () => {
                 <span>{user && user.name}</span>
               </Link>
 
+              {/* ........................................... */}
+
+              {/* ........................................... */}
               <div
                 className="dropdown-menu"
                 aria-labelledby="dropDownMenuButton"
               >
-                {user && user.role === "admin" && (
+                {/* {user && user.role === "admin" && (
                   <Link className="dropdown-item" to="/dashboard">
                     Dashboard
                   </Link>
                 )}
-                <Link className="dropdown-item" to="/orders/me">
+                <Link className="dropdown-item text-danger" to="/orders/me">
                   Orders
                 </Link>
                 <Link className="dropdown-item" to="/me">
                   Profile
-                </Link>
+                </Link> */}
                 <Link
                   className="dropdown-item text-danger"
                   to="/"
@@ -105,6 +107,11 @@ const Header = () => {
             {user && user.role === "admin" && (
               <Link className="dropdown-item text-success" to="/dashboard">
                 Dashboard
+              </Link>
+            )}
+            {user && user.role === "vendor" && (
+              <Link className="dropdown-item text-success" to="/vdashboard">
+                Vendor Panel
               </Link>
             )}
             <Link

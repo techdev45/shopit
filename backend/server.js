@@ -12,9 +12,9 @@ process.on("uncaughtException", (err) => {
 });
 
 //setting up confiq file
-// if (process.env.NODE_ENV === "PRODUCTION")
-//   require("dotenv").config({ path: "backend/config/config.env" });
+// dotenv.config({ path: "backend/config/config.env" });
 
+//setting up confiq file
 if (process.env.NODE_ENV !== "PRODUCTION")
   require("dotenv").config({ path: "backend/config/config.env" });
 

@@ -4,6 +4,7 @@ const router = express.Router();
 const {
   getProducts,
   getAdminProducts,
+  getVendorProducts,
   newProduct,
   getSingleProduct,
   updateProduct,
@@ -19,6 +20,7 @@ router.route("/products").get(getProducts);
 router
   .route("/admin/products")
   .get(isAuthenticatedUser, authorizeRoles("admin"), getAdminProducts);
+
 router.route("/product/:id").get(getSingleProduct);
 
 router
@@ -29,6 +31,18 @@ router
   .route("/admin/product/:id")
   .put(isAuthenticatedUser, authorizeRoles("admin"), updateProduct)
   .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteProduct);
+//for vendors
+// router
+//   .route("/vendor/products")
+//   .get(isAuthenticatedUser, authorizeRoles("vendor"), getVendorProducts);
+router
+  .route("/vendor/product/new")
+  .post(isAuthenticatedUser, authorizeRoles("vendor"), newProduct);
+router
+  .route("/vendor/product/:id")
+  .put(isAuthenticatedUser, authorizeRoles("vendor"), updateProduct)
+  .delete(isAuthenticatedUser, authorizeRoles("vendor"), deleteProduct);
+//..................
 
 router.route("/review").put(isAuthenticatedUser, createProductReview);
 router.route("/reviews").get(isAuthenticatedUser, getProductReviews);

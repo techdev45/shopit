@@ -50,7 +50,7 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-// Get logged in user order => /api/v1/order/:id
+// Get logged in user orders => /api/v1/orders/me
 exports.myOrders = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.find({ user: req.user.id }).populate(
     "user",

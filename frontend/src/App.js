@@ -27,6 +27,9 @@ import UpdatePassword from "./components/user/UpdatePassword";
 import ForgotPassword from "./components/user/ForgotPassword";
 import NewPassword from "./components/user/NewPassword";
 
+// Vendors Imports
+import Vdashboard from "./components/vendors/Vdashboard";
+
 // Admin Imports
 import Dashboard from "./components/admin/Dashboard";
 import ProductsList from "./components/admin/ProductsList";
@@ -112,6 +115,12 @@ function App() {
           exact
         />
         <ProtectedRoute
+          path="/vdashboard"
+          isVendor={true}
+          component={Vdashboard}
+          exact
+        />
+        <ProtectedRoute
           path="/admin/products"
           isAdmin={true}
           component={ProductsList}
@@ -120,6 +129,12 @@ function App() {
         <ProtectedRoute
           path="/admin/product"
           isAdmin={true}
+          component={NewProduct}
+          exact
+        />
+        <ProtectedRoute
+          path="/vendor/product"
+          isVendor={true}
           component={NewProduct}
           exact
         />
