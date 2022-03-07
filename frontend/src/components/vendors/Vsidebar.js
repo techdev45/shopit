@@ -37,7 +37,7 @@ const Vsidebar = () => {
           </li> */}
           {/* ......................................................... */}
           <li>
-            <Link to="/admin/products">
+            <Link to="/vendor/products">
               <i className="fa fa-clipboard"></i> All Products
             </Link>
           </li>
@@ -51,13 +51,13 @@ const Vsidebar = () => {
           {/* ......................................................... */}
 
           <li>
-            <Link to="/admin/orders">
+            <Link to="/vendor/orders">
               <i className="fa fa-shopping-basket"></i> Orders
             </Link>
           </li>
 
           <li>
-            <Link to="/admin/reviews">
+            <Link to="/vendor/reviews">
               <i className="fa fa-star"></i> Reviews
             </Link>
           </li>
