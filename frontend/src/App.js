@@ -30,6 +30,7 @@ import NewPassword from "./components/user/NewPassword";
 // Vendors Imports
 import Vdashboard from "./components/vendors/Vdashboard";
 import VnewProduct from "./components/vendors/VnewProduct";
+import VproductsList from "./components/vendors/VproductsList";
 
 // Admin Imports
 import Dashboard from "./components/admin/Dashboard";
@@ -125,6 +126,12 @@ function App() {
           path="/admin/products"
           isAdmin={true}
           component={ProductsList}
+          exact
+        />
+        <ProtectedRoute
+          path="/vendor/products"
+          isVendor={true}
+          component={VproductsList}
           exact
         />
         <ProtectedRoute

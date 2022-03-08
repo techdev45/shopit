@@ -7,7 +7,7 @@ const Vsidebar = () => {
       <nav id="sidebar">
         <ul className="list-unstyled components">
           <li>
-            <Link to="/dashboard">
+            <Link to="/vdashboard">
               <i className="fa fa-tachometer"></i> Dashboard
             </Link>
           </li>

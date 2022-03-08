@@ -7,7 +7,7 @@ import Vsidebar from "./Vsidebar";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { getAdminProducts } from "../../actions/productActions";
+import { getVendorProducts } from "../../actions/productActions";
 import { allOrders } from "../../actions/orderActions";
 import { allUsers } from "../../actions/userActions";
 
@@ -27,7 +27,7 @@ const Vdashboard = () => {
   // });
 
   useEffect(() => {
-    dispatch(getAdminProducts());
+    dispatch(getVendorProducts());
     dispatch(allOrders());
     dispatch(allUsers());
   }, [dispatch]);
@@ -72,7 +72,7 @@ const Vdashboard = () => {
                     </div>
                     <Link
                       className="card-footer text-white clearfix small z-1"
-                      to="/admin/products"
+                      to="/vendor/products"
                     >
                       <span className="float-left">View Details</span>
                       <span className="float-right">

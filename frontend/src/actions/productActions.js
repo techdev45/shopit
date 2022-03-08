@@ -7,6 +7,9 @@ import {
   ADMIN_PRODUCTS_REQUEST,
   ADMIN_PRODUCTS_SUCCESS,
   ADMIN_PRODUCTS_FAIL,
+  VENDOR_PRODUCTS_REQUEST,
+  VENDOR_PRODUCTS_SUCCESS,
+  VENDOR_PRODUCTS_FAIL,
   NEW_PRODUCT_REQUEST,
   NEW_PRODUCT_SUCCESS,
   NEW_PRODUCT_FAIL,
@@ -57,7 +60,7 @@ export const getProducts =
       });
     }
   };
-
+//New Product
 export const newProduct = (productData) => async (dispatch) => {
   try {
     dispatch({ type: NEW_PRODUCT_REQUEST });
@@ -86,6 +89,7 @@ export const newProduct = (productData) => async (dispatch) => {
   }
 };
 
+//Vendor New Product
 export const vNewProduct = (productData) => async (dispatch) => {
   try {
     dispatch({ type: NEW_PRODUCT_REQUEST });
@@ -162,6 +166,35 @@ export const updateProduct = (id, productData) => async (dispatch) => {
   }
 };
 
+// Update Product (VENDOR)
+export const vUpdateProduct = (id, productData) => async (dispatch) => {
+  try {
+    dispatch({ type: UPDATE_PRODUCT_REQUEST });
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const { data } = await axios.put(
+      `/api/v1/vendor/product/${id}`,
+      productData,
+      config
+    );
+
+    dispatch({
+      type: UPDATE_PRODUCT_SUCCESS,
+      payload: data.success,
+    });
+  } catch (error) {
+    dispatch({
+      type: UPDATE_PRODUCT_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
 export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
@@ -203,7 +236,7 @@ export const newReview = (reviewData) => async (dispatch) => {
     });
   }
 };
-
+//get Admin Products
 export const getAdminProducts = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCTS_REQUEST });
@@ -217,6 +250,25 @@ export const getAdminProducts = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: ADMIN_PRODUCTS_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
+//get Vendor Products
+export const getVendorProducts = () => async (dispatch) => {
+  try {
+    dispatch({ type: VENDOR_PRODUCTS_REQUEST });
+
+    const { data } = await axios.get(`/api/v1/vendor/products`);
+
+    dispatch({
+      type: VENDOR_PRODUCTS_SUCCESS,
+      payload: data.products,
+    });
+  } catch (error) {
+    dispatch({
+      type: VENDOR_PRODUCTS_FAIL,
       payload: error.response.data.message,
     });
   }
