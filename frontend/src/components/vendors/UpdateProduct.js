@@ -1,23 +1,29 @@
 import React, { Fragment, useState, useEffect } from "react";
 
 import MetaData from "../layout/MetaData";
-import Vsidebar from "./Vsidebar";
+import Sidebar from "./Vsidebar";
 
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import { vNewProduct, clearErrors } from "../../actions/productActions";
-import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
+import {
+    vUpdateProduct,
+    getProductDetails,
+    clearErrors,
+} from "../../actions/productActions";
+import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
 
-const VnewProduct = ({ history }) => {
+import { PRODUCT_DETAILS_SUCCESS } from "../../constants/productConstants";
+
+const UpdateProduct = ({ match, history }) => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
     const [stock, setStock] = useState(0);
-    const [seller, setSeller] = useState(
-        useSelector((state) => state.auth.user.name)
-    );
+    const [seller, setSeller] = useState("");
     const [images, setImages] = useState([]);
+
+    const [oldImages, setOldImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
 
     const categories = [
@@ -38,22 +44,65 @@ const VnewProduct = ({ history }) => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, error, success } = useSelector(
-        (state) => state.newProduct
-    );
+    const { error, product } = useSelector((state) => state.productDetails);
+    const {
+        loading,
+        error: updateError,
+        isUpdated,
+    } = useSelector((state) => state.product);
+
+    const productId = match.params.id;
 
     useEffect(() => {
+        if (product && product._id !== productId) {
+            dispatch(getProductDetails(productId));
+        } else {
+            setName(product.name);
+            setPrice(product.price);
+            setDescription(product.description);
+            setCategory(product.category);
+            setSeller(product.seller);
+            setStock(product.stock);
+            setOldImages(product.images);
+        }
+
         if (error) {
             alert.error(error);
             dispatch(clearErrors());
         }
 
-        if (success) {
-            history.push("/vendor/products");
-            alert.success("Product created successfully");
-            dispatch({ type: NEW_PRODUCT_RESET });
+        if (updateError) {
+            alert.error(updateError);
+            dispatch(clearErrors());
         }
-    }, [dispatch, alert, error, success, history]);
+
+        if (isUpdated) {
+            dispatch({
+                type: PRODUCT_DETAILS_SUCCESS,
+                payload: {
+                    name,
+                    price,
+                    description,
+                    category,
+                    stock,
+                    seller,
+                    images,
+                },
+            });
+            history.push("/vendor/products");
+            alert.success("Product updated successfully");
+            dispatch({ type: UPDATE_PRODUCT_RESET });
+        }
+    }, [
+        dispatch,
+        alert,
+        error,
+        isUpdated,
+        history,
+        updateError,
+        product,
+        productId,
+    ]);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -70,7 +119,7 @@ const VnewProduct = ({ history }) => {
             formData.append("images", image);
         });
 
-        dispatch(vNewProduct(formData));
+        dispatch(vUpdateProduct(product._id, formData));
     };
 
     const onChange = (e) => {
@@ -78,6 +127,7 @@ const VnewProduct = ({ history }) => {
 
         setImagesPreview([]);
         setImages([]);
+        setOldImages([]);
 
         files.forEach((file) => {
             const reader = new FileReader();
@@ -98,10 +148,10 @@ const VnewProduct = ({ history }) => {
 
     return (
         <Fragment>
-            <MetaData title={"New Product"} />
+            <MetaData title={"Update Product"} />
             <div className='row'>
                 <div className='col-12 col-md-2'>
-                    <Vsidebar />
+                    <Sidebar />
                 </div>
 
                 <div className='col-12 col-md-10'>
@@ -112,7 +162,7 @@ const VnewProduct = ({ history }) => {
                                 onSubmit={submitHandler}
                                 encType='multipart/form-data'
                             >
-                                <h1 className='mb-4'>New Product</h1>
+                                <h1 className='mb-4'>Update Product</h1>
 
                                 <div className='form-group'>
                                     <label htmlFor='name_field'>Name</label>
@@ -225,6 +275,18 @@ const VnewProduct = ({ history }) => {
                                         </label>
                                     </div>
 
+                                    {oldImages &&
+                                        oldImages.map((img) => (
+                                            <img
+                                                key={img}
+                                                src={img.url}
+                                                alt={img.url}
+                                                className='mt-3 mr-2'
+                                                width='55'
+                                                height='52'
+                                            />
+                                        ))}
+
                                     {imagesPreview.map((img) => (
                                         <img
                                             src={img}
@@ -243,7 +305,7 @@ const VnewProduct = ({ history }) => {
                                     className='btn btn-block py-3'
                                     disabled={loading ? true : false}
                                 >
-                                    CREATE
+                                    UPDATE
                                 </button>
                             </form>
                         </div>
@@ -254,4 +316,4 @@ const VnewProduct = ({ history }) => {
     );
 };
 
-export default VnewProduct;
+export default UpdateProduct;

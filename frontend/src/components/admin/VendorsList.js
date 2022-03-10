@@ -4,55 +4,46 @@ import { MDBDataTable } from "mdbreact";
 
 import MetaData from "../layout/MetaData";
 import Loader from "../layout/Loader";
-import Vsidebar from "./Vsidebar";
+import Sidebar from "./Sidebar";
 
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import {
-    getVendorProducts,
-    vdeleteProduct,
-    clearErrors,
-} from "../../actions/productActions";
-import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
+import { allVendors, deleteUser, clearErrors } from "../../actions/userActions";
+import { DELETE_USER_RESET } from "../../constants/userConstants";
 
-const VproductsList = ({ history }) => {
+const VendorsList = ({ history }) => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, error, products } = useSelector(
-        (state) => state.vproducts
+    const { loading, error, vendors } = useSelector(
+        (state) => state.allVendors
     );
-    const { error: deleteError, isDeleted } = useSelector(
-        (state) => state.product
-    );
-
-    const seller = useSelector((state) => state.auth?.user.name);
+    const { isDeleted } = useSelector((state) => state.user);
 
     useEffect(() => {
-        dispatch(getVendorProducts(seller));
+        dispatch(allVendors());
 
         if (error) {
             alert.error(error);
             dispatch(clearErrors());
         }
 
-        if (deleteError) {
-            alert.error(deleteError);
-            dispatch(clearErrors());
-        }
-
         if (isDeleted) {
-            alert.success("Product deleted successfully");
-            history.push("/vendor/products");
-            dispatch({ type: DELETE_PRODUCT_RESET });
+            alert.success("Vendor deleted successfully");
+            history.push("/admin/vendors");
+            dispatch({ type: DELETE_USER_RESET });
         }
-    }, [dispatch, alert, error, deleteError, isDeleted, history, seller]);
+    }, [dispatch, alert, error, isDeleted, history]);
 
-    const setProducts = () => {
+    const deleteUserHandler = (id) => {
+        dispatch(deleteUser(id));
+    };
+
+    const setVendors = () => {
         const data = {
             columns: [
                 {
-                    label: "ID",
+                    label: "Vendor ID",
                     field: "id",
                     sort: "asc",
                 },
@@ -62,13 +53,13 @@ const VproductsList = ({ history }) => {
                     sort: "asc",
                 },
                 {
-                    label: "Price",
-                    field: "price",
+                    label: "Email",
+                    field: "email",
                     sort: "asc",
                 },
                 {
-                    label: "Stock",
-                    field: "stock",
+                    label: "Role",
+                    field: "role",
                     sort: "asc",
                 },
                 {
@@ -79,23 +70,24 @@ const VproductsList = ({ history }) => {
             rows: [],
         };
 
-        products.forEach((product) => {
+        vendors.forEach((vendor) => {
             data.rows.push({
-                id: product._id,
-                name: product.name,
-                price: `Rs ${product.price}`,
-                stock: product.stock,
+                id: vendor._id,
+                name: vendor.name,
+                email: vendor.email,
+                role: vendor.role,
+
                 actions: (
                     <Fragment>
                         <Link
-                            to={`/vendor/product/${product._id}`}
+                            to={`/admin/user/${vendor._id}`}
                             className='btn btn-primary py-1 px-2'
                         >
                             <i className='fa fa-pencil'></i>
                         </Link>
                         <button
                             className='btn btn-danger py-1 px-2 ml-2'
-                            onClick={() => deleteProductHandler(product._id)}
+                            onClick={() => deleteUserHandler(vendor._id)}
                         >
                             <i className='fa fa-trash'></i>
                         </button>
@@ -107,27 +99,23 @@ const VproductsList = ({ history }) => {
         return data;
     };
 
-    const deleteProductHandler = (id) => {
-        dispatch(vdeleteProduct(id));
-    };
-
     return (
         <Fragment>
-            <MetaData title={"All Products"} />
+            <MetaData title={"All Users"} />
             <div className='row'>
                 <div className='col-12 col-md-2'>
-                    <Vsidebar />
+                    <Sidebar />
                 </div>
 
                 <div className='col-12 col-md-10'>
                     <Fragment>
-                        <h1 className='my-5'>All Products</h1>
+                        <h1 className='my-5'>All Vendors</h1>
 
                         {loading ? (
                             <Loader />
                         ) : (
                             <MDBDataTable
-                                data={setProducts()}
+                                data={setVendors()}
                                 className='px-3'
                                 bordered
                                 striped
@@ -141,4 +129,4 @@ const VproductsList = ({ history }) => {
     );
 };
 
-export default VproductsList;
+export default VendorsList;
