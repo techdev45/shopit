@@ -75,9 +75,14 @@ const Header = () => {
                 className="dropdown-menu"
                 aria-labelledby="dropDownMenuButton"
               >
-                {/* {user && user.role === "admin" && (
+                {user && user.role === "admin" && (
                   <Link className="dropdown-item" to="/dashboard">
                     Dashboard
+                  </Link>
+                )}
+                {user && user.role === "vendor" && (
+                  <Link className="dropdown-item text-success" to="/vdashboard">
+                    Vendor Panel
                   </Link>
                 )}
                 <Link className="dropdown-item text-danger" to="/orders/me">
@@ -85,7 +90,7 @@ const Header = () => {
                 </Link>
                 <Link className="dropdown-item" to="/me">
                   Profile
-                </Link> */}
+                </Link>
                 <Link
                   className="dropdown-item text-danger"
                   to="/"
@@ -103,7 +108,7 @@ const Header = () => {
             )
           )}
           {/* ......................................................... */}
-          <div className="menu">
+          {/* <div className="menu">
             {user && user.role === "admin" && (
               <Link className="dropdown-item text-success" to="/dashboard">
                 Dashboard
@@ -121,7 +126,7 @@ const Header = () => {
             >
               Logout
             </Link>
-          </div>
+          </div> */}
 
           {/* ......................................................... */}
         </div>
