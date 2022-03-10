@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { getProducts } from "../actions/productActions";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -162,9 +162,9 @@ const Home = ({ match }) => {
           )}
         </Fragment>
       )}
-      <Link to="/About" className="btn btn-block mt-3" id="about-button">
+      {/* <Link to="/About" className="btn btn-block mt-3" id="about-button">
         About Us
-      </Link>
+      </Link> */}
     </Fragment>
   );
 };

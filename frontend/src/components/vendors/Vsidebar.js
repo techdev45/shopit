@@ -11,7 +11,7 @@ const Vsidebar = () => {
               <i className="fa fa-tachometer"></i> Dashboard
             </Link>
           </li>
-          {/* 
+
           <li>
             <a
               href="#productSubmenu"
@@ -23,20 +23,20 @@ const Vsidebar = () => {
             </a>
             <ul className="collapse list-unstyled" id="productSubmenu">
               <li>
-                <Link to="/admin/products">
+                <Link to="/vendor/products">
                   <i className="fa fa-clipboard"></i> All
                 </Link>
               </li>
 
               <li>
-                <Link to="/admin/product">
+                <Link to="/vendor/product">
                   <i className="fa fa-plus"></i> Create
                 </Link>
               </li>
             </ul>
-          </li> */}
+          </li>
           {/* ......................................................... */}
-          <li>
+          {/* <li>
             <Link to="/vendor/products">
               <i className="fa fa-clipboard"></i> All Products
             </Link>
@@ -46,7 +46,7 @@ const Vsidebar = () => {
             <Link to="/vendor/product">
               <i className="fa fa-plus"></i> Create Product
             </Link>
-          </li>
+          </li> */}
 
           {/* ......................................................... */}
 

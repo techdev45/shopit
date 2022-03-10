@@ -160,7 +160,7 @@ const ProductDetails = ({ match }) => {
 
               <hr />
 
-              <p id="product_price">Rs {product.price}</p>
+              <p id="product_price">${product.price}</p>
               <div className="stockCounter d-inline">
                 <span className="btn btn-danger minus" onClick={decreaseQty}>
                   -
@@ -202,8 +202,7 @@ const ProductDetails = ({ match }) => {
               <hr />
 
               <h4 className="mt-2">Description:</h4>
-              <h3 style={{ fontSize: 18 }}>{product.description}</h3>
-
+              <p>{product.description}</p>
               <hr />
               <p id="product_seller mb-3">
                 Sold by: <strong>{product.seller}</strong>
