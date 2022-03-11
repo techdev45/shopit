@@ -12,7 +12,7 @@ const errorMiddleware = require("./middlewares/errors");
 //..................
 // dotenv.config({ path: "backend/config/config.env" });
 if (process.env.NODE_ENV !== "PRODUCTION")
-  require("dotenv").config({ path: "backend/config/config.env" });
+    require("dotenv").config({ path: "backend/config/config.env" });
 //...................
 
 app.use(express.json());
@@ -32,15 +32,19 @@ app.use("/api/v1", payment);
 app.use("/api/v1", order);
 //For Development
 if (process.env.NODE_ENV === "DEVELOPMENT") {
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+    app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-  });
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+    });
 } else {
-  app.get("/", (req, res) => {
-    res.send("API is running");
-  });
+    app.use(express.static("frontend/build"));
+
+    app.get("*", (req, res) => {
+        res.sendFile(
+            path.resolve(__dirname, "frontend", "build", "index.html")
+        );
+    });
 }
 
 //Middleware to handle errors
