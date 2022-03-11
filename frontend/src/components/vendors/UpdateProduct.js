@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 
 import MetaData from "../layout/MetaData";
-import Vsidebar from "./Vsidebar";
+import Sidebar from "./Vsidebar";
 
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +12,9 @@ import {
 } from "../../actions/productActions";
 import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
 
-const VupdateProduct = ({ match, history }) => {
+import { PRODUCT_DETAILS_SUCCESS } from "../../constants/productConstants";
+
+const UpdateProduct = ({ match, history }) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
@@ -75,6 +77,18 @@ const VupdateProduct = ({ match, history }) => {
     }
 
     if (isUpdated) {
+      dispatch({
+        type: PRODUCT_DETAILS_SUCCESS,
+        payload: {
+          name,
+          price,
+          description,
+          category,
+          stock,
+          seller,
+          images,
+        },
+      });
       history.push("/vendor/products");
       alert.success("Product updated successfully");
       dispatch({ type: UPDATE_PRODUCT_RESET });
@@ -134,7 +148,7 @@ const VupdateProduct = ({ match, history }) => {
       <MetaData title={"Update Product"} />
       <div className="row">
         <div className="col-12 col-md-2">
-          <Vsidebar />
+          <Sidebar />
         </div>
 
         <div className="col-12 col-md-10">
@@ -275,4 +289,4 @@ const VupdateProduct = ({ match, history }) => {
   );
 };
 
-export default VupdateProduct;
+export default UpdateProduct;

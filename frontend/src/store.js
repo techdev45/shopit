@@ -10,12 +10,14 @@ import {
   newReviewReducer,
   productReviewsReducer,
   reviewReducer,
+  vproductsReducer,
 } from "./reducers/productReducers";
 import {
   authReducer,
   userReducer,
   forgotPasswordReducer,
   allUsersReducer,
+  allVendorsReducer,
   userDetailsReducer,
 } from "./reducers/userReducers";
 import { cartReducer } from "./reducers/cartReducers";
@@ -29,6 +31,7 @@ import {
 
 const reducer = combineReducers({
   products: productsReducer,
+  vproducts: vproductsReducer,
   productDetails: productDetailsReducer,
   newProduct: newProductReducer,
   product: productReducer,
@@ -37,6 +40,7 @@ const reducer = combineReducers({
   auth: authReducer,
   user: userReducer,
   allUsers: allUsersReducer,
+  allVendors: allVendorsReducer,
   userDetails: userDetailsReducer,
   forgotPassword: forgotPasswordReducer,
   cart: cartReducer,
@@ -68,22 +72,92 @@ const store = createStore(
 
 export default store;
 
-// import { createStore, combineReducers, applyMiddleware } from 'redux';
-// import thunk from 'redux-thunk';
-// import { composeWithDevTools } from 'redux-devtools-extension'
+// import { createStore, combineReducers, applyMiddleware } from "redux";
+// import thunk from "redux-thunk";
+// import { composeWithDevTools } from "redux-devtools-extension";
 
-// import { productsReducer, productDetailsReducer } from './reducers/productReducers';
+// import {
+//   productsReducer,
+//   newProductReducer,
+//   productReducer,
+//   productDetailsReducer,
+//   newReviewReducer,
+//   productReviewsReducer,
+//   reviewReducer,
+// } from "./reducers/productReducers";
+// import {
+//   authReducer,
+//   userReducer,
+//   forgotPasswordReducer,
+//   allUsersReducer,
+//   userDetailsReducer,
+// } from "./reducers/userReducers";
+// import { cartReducer } from "./reducers/cartReducers";
+// import {
+//   newOrderReducer,
+//   myOrdersReducer,
+//   orderDetailsReducer,
+//   allOrdersReducer,
+//   orderReducer,
+// } from "./reducers/orderReducers";
 
 // const reducer = combineReducers({
-//     products: productsReducer,
-//     productDetails: productDetailsReducer
-// })
+//   products: productsReducer,
+//   productDetails: productDetailsReducer,
+//   newProduct: newProductReducer,
+//   product: productReducer,
+//   productReviews: productReviewsReducer,
+//   review: reviewReducer,
+//   auth: authReducer,
+//   user: userReducer,
+//   allUsers: allUsersReducer,
+//   userDetails: userDetailsReducer,
+//   forgotPassword: forgotPasswordReducer,
+//   cart: cartReducer,
+//   newOrder: newOrderReducer,
+//   myOrders: myOrdersReducer,
+//   allOrders: allOrdersReducer,
+//   orderDetails: orderDetailsReducer,
+//   order: orderReducer,
+//   newReview: newReviewReducer,
+// });
 
 // let initialState = {
+//   cart: {
+//     cartItems: localStorage.getItem("cartItems")
+//       ? JSON.parse(localStorage.getItem("cartItems"))
+//       : [],
+//     shippingInfo: localStorage.getItem("shippingInfo")
+//       ? JSON.parse(localStorage.getItem("shippingInfo"))
+//       : {},
+//   },
+// };
 
-// }
-
-// const middleware = [thunk];
-// const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(...middleware)))
+// const middlware = [thunk];
+// const store = createStore(
+//   reducer,
+//   initialState,
+//   composeWithDevTools(applyMiddleware(...middlware))
+// );
 
 // export default store;
+
+// // import { createStore, combineReducers, applyMiddleware } from 'redux';
+// // import thunk from 'redux-thunk';
+// // import { composeWithDevTools } from 'redux-devtools-extension'
+
+// // import { productsReducer, productDetailsReducer } from './reducers/productReducers';
+
+// // const reducer = combineReducers({
+// //     products: productsReducer,
+// //     productDetails: productDetailsReducer
+// // })
+
+// // let initialState = {
+
+// // }
+
+// // const middleware = [thunk];
+// // const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(...middleware)))
+
+// // export default store;
