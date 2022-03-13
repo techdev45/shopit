@@ -44,6 +44,7 @@ const productSchema = new mongoose.Schema({
         "Random Access Memory (RAM)",
         "Hard Disk Drive (HDD)",
         "Solid-State Drive (SSD)",
+        "Laptop",
         "Cooling Fans",
         "Processor",
         "Graphic Card",
