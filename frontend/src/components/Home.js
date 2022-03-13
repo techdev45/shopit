@@ -22,18 +22,19 @@ const Home = ({ match }) => {
   const [category, setCategory] = useState("");
 
   const categories = [
-    "Electronics",
-    "Cameras",
-    "Laptops",
-    "Accessories",
-    "Headphone",
-    "Food",
-    "Book",
-    "Clothes/Shoes",
-    "Beauty/Health",
-    "Sports",
-    "Outdoor",
-    "Home",
+    "Motherboard",
+    "Central Processing Unit (CPU)",
+    "Random Access Memory (RAM)",
+    "Hard Disk Drive (HDD)",
+    "Solid-State Drive (SSD)",
+    "Cooling Fans",
+    "Processor",
+    "Graphic Card",
+    "Gaming Mouse",
+    "Gaming Headsets",
+    "PC Casings",
+    "Keyboards",
+    "LED",
   ];
 
   const alert = useAlert();
@@ -86,7 +87,7 @@ const Home = ({ match }) => {
                       <Range
                         marks={{
                           1: `Rs1`,
-                          1000: `Rs100000`,
+                          100000: `Rs100000`,
                         }}
                         min={1}
                         max={100000}

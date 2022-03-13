@@ -4,7 +4,7 @@ import { Route, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { logout } from "../../actions/userActions";
-import About from "../about/About";
+// import About from "../about/About";
 
 import Search from "./Search";
 

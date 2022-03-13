@@ -20,17 +20,19 @@ const NewProduct = ({ history }) => {
 
   const categories = [
     "Default",
-    "Electronics",
-    "Cameras",
-    "Laptops",
-    "Accessories",
-    "Headphones",
+    "Motherboard",
+    "Central Processing Unit (CPU)",
+    "Random Access Memory (RAM)",
+    "Hard Disk Drive (HDD)",
+    "Solid-State Drive (SSD)",
+    "Cooling Fans",
+    "Processor",
     "Graphic Card",
+    "Gaming Mouse",
+    "Gaming Headsets",
+    "PC Casings",
     "Keyboards",
     "LED",
-    "Hard Drives",
-    "Cooling Fans",
-    "PC casing",
   ];
 
   const alert = useAlert();
