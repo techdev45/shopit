@@ -6,9 +6,9 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  /* background: #e8cbc0;
+  background: #e8cbc0;
   background: -webkit-linear-gradient(to right, #e4e5eb, #e4e5eb);
-  background: linear-gradient(to right, #e4e5eb, #e4e5eb); */
+  background: linear-gradient(to right, #e4e5eb, #e4e5eb);
 }
 
 /* Scroll Bar */
