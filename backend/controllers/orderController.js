@@ -149,7 +149,7 @@ exports.allVendorOrders = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-// Update / Process order-ADMIN => /api/v1/admin/order/:id
+// Update / Process order-VENDOR => /api/v1/vendor/order/:id
 exports.updateVendorOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
 
