@@ -51,7 +51,7 @@ const Dashboard = () => {
             <Fragment>
               <MetaData title={"Admin Dashboard"} />
 
-              <div className="row pr-4">
+              {/* <div className="row pr-4">
                 <div className="col-xl-12 col-sm-12 mb-3">
                   <div className="card text-white bg-primary o-hidden h-100">
                     <div className="card-body">
@@ -66,10 +66,10 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="row pr-4">
-                <div className="col-xl-4 col-sm-6 mb-3">
+                <div className="col-xl-6 col-sm-6 mb-3">
                   <div className="card text-white bg-success o-hidden h-100">
                     <div className="card-body">
                       <div className="text-center card-font-size">
@@ -89,7 +89,7 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                <div className="col-xl-4 col-sm-6 mb-3">
+                <div className="col-xl-6 col-sm-6 mb-3">
                   <div className="card text-white bg-danger o-hidden h-100">
                     <div className="card-body">
                       <div className="text-center card-font-size">
@@ -109,7 +109,7 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                <div className="col-xl-4 col-sm-6 mb-3">
+                <div className="col-xl-6 col-sm-6 mb-3">
                   <div className="card text-white bg-info o-hidden h-100">
                     <div className="card-body">
                       <div className="text-center card-font-size">
@@ -128,8 +128,6 @@ const Dashboard = () => {
                     </Link>
                   </div>
                 </div>
-              </div>
-              <div className="row pr-4">
                 <div className="col-xl-6 col-sm-6 mb-3">
                   <div className="card text-white bg-dark o-hidden h-100">
                     <div className="card-body">
@@ -149,18 +147,18 @@ const Dashboard = () => {
                     </Link>
                   </div>
                 </div>
+              </div>
 
-                <div className="col-xl-6 col-sm-6 mb-3">
+              {/* <div className="col-xl-6 col-sm-6 mb-3">
                   <div className="card text-white bg-warning o-hidden h-100">
                     <div className="card-body">
                       <div className="text-center card-font-size">
                         Out of Stock
-                        {/* <br /> <b>{outOfStock}</b> */}
+                        <br /> <b>{outOfStock}</b>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </div> */}
             </Fragment>
           )}
         </div>
