@@ -66,13 +66,13 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   //Get reset token
   const resetToken = user.getResetPasswordToken();
 
-  const message = `your password reset token is as follow:\n\n${resetUrl}\n\nif you have not requested this email, then ignore it.`;
+  await user.save({ validateBeforeSave: false });
 
   //create reset password url
   const resetUrl = `${req.protocol}://${req.get(
     "host"
   )}/api/v1/password/reset/${resetToken}`;
-
+  const message = `your password reset token is as follow:\n\n${resetUrl}\n\nif you have not requested this email, then ignore it.`;
   try {
     await sendEmail({
       email: user.email,
