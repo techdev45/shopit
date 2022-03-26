@@ -63,14 +63,15 @@ const ProductDetails = ({ match }) => {
     const qty = count.valueAsNumber + 1;
     setQuantity(qty);
   };
-  const typeQty = () => {
-    const type = document.querySelector(".type");
+  // const typeQty = () => {
+  //   const type = document.querySelector(".type");
 
-    if (type.valueAsNumber >= product.stock) return;
+  //   if (type.valueAsNumber >= product.stock) return;
 
-    const qty = type.valueAsNumber + 1;
-    setQuantity(qty);
-  };
+  //   const qty = type.valueAsNumber + 1;
+  //   setQuantity(qty);
+
+  // };
 
   const decreaseQty = () => {
     const count = document.querySelector(".count");
@@ -184,7 +185,7 @@ const ProductDetails = ({ match }) => {
                   type="number"
                   className="form-control count d-inline"
                   value={quantity}
-                  onChange={(typeQty) => setQuantity(typeQty.target.value)}
+                  onChange={(e) => setQuantity(e.target.value)}
                 />
 
                 <span className="btn btn-primary plus" onClick={increaseQty}>
