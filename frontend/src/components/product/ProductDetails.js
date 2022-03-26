@@ -63,6 +63,14 @@ const ProductDetails = ({ match }) => {
     const qty = count.valueAsNumber + 1;
     setQuantity(qty);
   };
+  const typeQty = () => {
+    const type = document.querySelector(".type");
+
+    if (type.valueAsNumber >= product.stock) return;
+
+    const qty = type.valueAsNumber + 1;
+    setQuantity(qty);
+  };
 
   const decreaseQty = () => {
     const count = document.querySelector(".count");
@@ -166,11 +174,17 @@ const ProductDetails = ({ match }) => {
                   -
                 </span>
 
+                {/* <input
+                  type="number"
+                  className="form-control count d-inline"
+                  value={quantity}
+                  onClick={typeQty}
+                /> */}
                 <input
                   type="number"
                   className="form-control count d-inline"
                   value={quantity}
-                  readOnly
+                  onChange={(typeQty) => setQuantity(typeQty.target.value)}
                 />
 
                 <span className="btn btn-primary plus" onClick={increaseQty}>
@@ -197,6 +211,7 @@ const ProductDetails = ({ match }) => {
                 >
                   {product.stock > 0 ? "In Stock" : "Out of Stock"}
                 </span>
+                <span id="stock_quantity">({product.stock} pieces left)</span>
               </p>
 
               <hr />

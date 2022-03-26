@@ -183,6 +183,9 @@ footer {
   font-weight: bold;
   margin-left: 0.3rem;
 }
+#stock_quantity {
+  margin-left: 0.3rem;
+}
 
 .redColor {
   color: red;
