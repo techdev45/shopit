@@ -141,7 +141,7 @@ const Home = ({ match }) => {
                 </Fragment>
               ) : (
                 products &&
-                products.map((product) => (
+                products.slice().reverse().map((product) => (
                   <Product key={product._id} product={product} col={3} />
                 ))
               )}
