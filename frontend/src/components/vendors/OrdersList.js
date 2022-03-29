@@ -68,36 +68,39 @@ const OrdersList = ({ history }) => {
       rows: [],
     };
 
-    orders.forEach((order) => {
-      data.rows.push({
-        id: order._id,
-        numofItems: order.orderItems.length,
-        amount: `Rs ${order.totalPrice}`,
-        status:
-          order.orderStatus &&
-          String(order.orderStatus).includes("Delivered") ? (
-            <p style={{ color: "green" }}>{order.orderStatus}</p>
-          ) : (
-            <p style={{ color: "red" }}>{order.orderStatus}</p>
+    orders
+      .slice()
+      .reverse()
+      .forEach((order) => {
+        data.rows.push({
+          id: order._id,
+          numofItems: order.orderItems.length,
+          amount: `Rs ${order.totalPrice}`,
+          status:
+            order.orderStatus &&
+            String(order.orderStatus).includes("Delivered") ? (
+              <p style={{ color: "green" }}>{order.orderStatus}</p>
+            ) : (
+              <p style={{ color: "red" }}>{order.orderStatus}</p>
+            ),
+          actions: (
+            <Fragment>
+              <Link
+                to={`/vendor/order/${order._id}`}
+                className="btn btn-primary py-1 px-2"
+              >
+                <i className="fa fa-eye"></i>
+              </Link>
+              <button
+                className="btn btn-danger py-1 px-2 ml-2"
+                onClick={() => deleteOrderHandler(order._id)}
+              >
+                <i className="fa fa-trash"></i>
+              </button>
+            </Fragment>
           ),
-        actions: (
-          <Fragment>
-            <Link
-              to={`/vendor/order/${order._id}`}
-              className="btn btn-primary py-1 px-2"
-            >
-              <i className="fa fa-eye"></i>
-            </Link>
-            <button
-              className="btn btn-danger py-1 px-2 ml-2"
-              onClick={() => deleteOrderHandler(order._id)}
-            >
-              <i className="fa fa-trash"></i>
-            </button>
-          </Fragment>
-        ),
+        });
       });
-    });
 
     return data;
   };

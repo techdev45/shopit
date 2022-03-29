@@ -56,25 +56,28 @@ const ListOrders = () => {
       rows: [],
     };
 
-    orders.forEach((order) => {
-      data.rows.push({
-        id: order._id,
-        numOfItems: order.orderItems.length,
-        amount: `Rs${order.totalPrice}`,
-        status:
-          order.orderStatus &&
-          String(order.orderStatus).includes("Delivered") ? (
-            <p style={{ color: "green" }}>{order.orderStatus}</p>
-          ) : (
-            <p style={{ color: "red" }}>{order.orderStatus}</p>
+    orders
+      .slice()
+      .reverse()
+      .forEach((order) => {
+        data.rows.push({
+          id: order._id,
+          numOfItems: order.orderItems.length,
+          amount: `Rs${order.totalPrice}`,
+          status:
+            order.orderStatus &&
+            String(order.orderStatus).includes("Delivered") ? (
+              <p style={{ color: "green" }}>{order.orderStatus}</p>
+            ) : (
+              <p style={{ color: "red" }}>{order.orderStatus}</p>
+            ),
+          actions: (
+            <Link to={`/order/${order._id}`} className="btn btn-primary">
+              <i className="fa fa-eye"></i>
+            </Link>
           ),
-        actions: (
-          <Link to={`/order/${order._id}`} className="btn btn-primary">
-            <i className="fa fa-eye"></i>
-          </Link>
-        ),
+        });
       });
-    });
 
     return data;
   };

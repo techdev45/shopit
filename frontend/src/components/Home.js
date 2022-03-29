@@ -89,7 +89,7 @@ const Home = ({ match }) => {
                       <Range
                         marks={{
                           1: `Rs1`,
-                          100000: `Rs100000`,
+                          100000: `Rs100k`,
                         }}
                         min={1}
                         max={100000}
@@ -141,9 +141,12 @@ const Home = ({ match }) => {
                 </Fragment>
               ) : (
                 products &&
-                products.map((product) => (
-                  <Product key={product._id} product={product} col={3} />
-                ))
+                products
+                  .slice()
+                  .reverse()
+                  .map((product) => (
+                    <Product key={product._id} product={product} col={3} />
+                  ))
               )}
             </div>
           </section>

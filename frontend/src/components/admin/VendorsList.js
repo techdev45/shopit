@@ -68,31 +68,34 @@ const VendorsList = ({ history }) => {
       rows: [],
     };
 
-    vendors.forEach((vendor) => {
-      data.rows.push({
-        id: vendor._id,
-        name: vendor.name,
-        email: vendor.email,
-        role: vendor.role,
+    vendors
+      .slice()
+      .reverse()
+      .forEach((vendor) => {
+        data.rows.push({
+          id: vendor._id,
+          name: vendor.name,
+          email: vendor.email,
+          role: vendor.role,
 
-        actions: (
-          <Fragment>
-            <Link
-              to={`/admin/user/${vendor._id}`}
-              className="btn btn-primary py-1 px-2"
-            >
-              <i className="fa fa-pencil"></i>
-            </Link>
-            <button
-              className="btn btn-danger py-1 px-2 ml-2"
-              onClick={() => deleteUserHandler(vendor._id)}
-            >
-              <i className="fa fa-trash"></i>
-            </button>
-          </Fragment>
-        ),
+          actions: (
+            <Fragment>
+              <Link
+                to={`/admin/user/${vendor._id}`}
+                className="btn btn-primary py-1 px-2"
+              >
+                <i className="fa fa-pencil"></i>
+              </Link>
+              <button
+                className="btn btn-danger py-1 px-2 ml-2"
+                onClick={() => deleteUserHandler(vendor._id)}
+              >
+                <i className="fa fa-trash"></i>
+              </button>
+            </Fragment>
+          ),
+        });
       });
-    });
 
     return data;
   };
