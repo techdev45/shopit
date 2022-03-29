@@ -8,8 +8,8 @@ const Contact = () => {
           <div className="col-lg-8 mx-auto">
             <h1 className="display-4">About Us</h1>
           </div>
-          <div className="col-lg-12 about-section">
-            <h>SHOPIT IS A MALL, A MARKETPLACE AND A COMMUNITY</h>
+          <div className="col-lg-12 col-sm-8 about-section">
+            <h1>SHOPIT IS A MALL, A MARKETPLACE AND A COMMUNITY</h1>
           </div>
           {/* style={{
               backgroundImage: "url(/images/bg.jpg)",
