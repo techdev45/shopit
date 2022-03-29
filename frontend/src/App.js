@@ -48,6 +48,7 @@ import UpdateUser from "./components/admin/UpdateUser";
 import ProductReviews from "./components/admin/ProductReviews";
 
 // import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
 
 import ProtectedRoute from "./components/route/ProtectedRoute";
 import { loadUser } from "./actions/userActions";
@@ -98,6 +99,7 @@ function App() {
             </Elements>
           )}
           {/* <Route path="/About" component={About} /> */}
+          <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/password/forgot" component={ForgotPassword} exact />

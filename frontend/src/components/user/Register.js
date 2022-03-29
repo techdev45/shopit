@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import MetaData from "../layout/MetaData";
 
@@ -150,6 +151,9 @@ const Register = ({ history }) => {
             >
               REGISTER
             </button>
+            <Link to="/login" className="float-right mt-3">
+              Already have an account?
+            </Link>
           </form>
         </div>
       </div>

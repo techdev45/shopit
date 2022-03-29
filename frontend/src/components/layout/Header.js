@@ -91,6 +91,9 @@ const Header = () => {
                 <Link className="dropdown-item" to="/me">
                   Profile
                 </Link>
+                <Link className="dropdown-item" to="/contact">
+                  About Us
+                </Link>
                 <Link
                   className="dropdown-item text-danger"
                   to="/"

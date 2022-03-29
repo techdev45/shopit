@@ -28,6 +28,16 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     },
   });
 
+  // const isEmailMatched = await user.compareEmail(email);
+
+  // if (isEmailMatched) {
+  //   // return next(new ErrorHandler("Invalid Email or Password", 404));
+  //   res.status(409).send({
+  //     auth: false,
+  //     message: "Email already exists",
+  //   });
+  // }
+
   sendToken(user, 200, res);
 });
 
@@ -50,7 +60,11 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   const isPasswordMatched = await user.comparePassword(password);
 
   if (!isPasswordMatched) {
-    return next(new ErrorHandler("Invalid Email or Password", 404));
+    // return next(new ErrorHandler("Invalid Email or Password", 404));
+    res.status(409).send({
+      auth: false,
+      message: "Invalid Email or Password",
+    });
   }
 
   sendToken(user, 200, res);
