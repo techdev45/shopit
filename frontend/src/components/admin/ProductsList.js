@@ -125,13 +125,15 @@ const ProductsList = ({ history }) => {
             {loading ? (
               <Loader />
             ) : (
-              <MDBDataTable
-                data={setProducts()}
-                className="px-3"
-                bordered
-                striped
-                hover
-              />
+              <div className="col-12 col-md-10 col-sm-10 col-xs-10 px-3">
+                <MDBDataTable
+                  id="datatable"
+                  data={setProducts()}
+                  bordered
+                  striped
+                  hover
+                />
+              </div>
             )}
           </Fragment>
         </div>

@@ -17,7 +17,9 @@ const Register = ({ history }) => {
   const { name, email, password } = user;
 
   const [avatar, setAvatar] = useState("");
-  const [avatarPreview, setAvatarPreview] = useState("/images/unnamed.png");
+  const [avatarPreview, setAvatarPreview] = useState(
+    "/images/default_avatar.jpg"
+  );
 
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -133,7 +135,7 @@ const Register = ({ history }) => {
                     name="avatar"
                     className="custom-file-input"
                     id="customFile"
-                    accept="iamges/*"
+                    accept="images/*"
                     onChange={onChange}
                   />
                   <label className="custom-file-label" htmlFor="customFile">

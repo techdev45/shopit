@@ -708,3 +708,19 @@ ul.CTAs a {
 .about-section2 p {
   text-align: right;
 }
+.foot {
+  background-color: #2e2e54;
+  height: 200px;
+  display: flex;
+}
+.center-foot {
+  text-align: center;
+  margin-top: 15px;
+}
+.payment-type {
+  text-align: center;
+  margin-top: 15px;
+}
+#datatable{
+  responsive:true;
+}

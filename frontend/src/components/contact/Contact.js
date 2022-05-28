@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 const Contact = () => {
   return (
     <div id="about">
@@ -8,7 +10,7 @@ const Contact = () => {
           <div className="col-lg-8 mx-auto">
             <h1 className="display-4">About Us</h1>
           </div>
-          <div className="col-lg-12 col-sm-8 about-section">
+          <div className="col-lg-12  about-section">
             <h1>SHOPIT IS A MALL, A MARKETPLACE AND A COMMUNITY</h1>
           </div>
           {/* style={{
@@ -112,6 +114,34 @@ const Contact = () => {
               <p>But when they do happen, We make them 100% right.</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="col-lg-12 foot">
+        <div className="col-lg-4 ">
+          <Link to="/">
+            <img
+              src="/images/logo.png"
+              style={{ width: "200px", marginTop: "15px" }}
+            />
+          </Link>
+          <p style={{ color: "white", marginTop: "20px" }}>
+            shopIT - The Multivendor Store
+          </p>
+          <p style={{ color: "white" }}>
+            Make it easy to do business anywhere in the era of digital economy.
+          </p>
+        </div>
+        <div className="col-lg-4  center-foot">
+          <h2 style={{ color: "#f85706d3" }}>Email</h2>
+          <p style={{ color: "white" }}>techdev45@outlook.com</p>
+
+          <h2 style={{ color: "#f85706d3" }}>Phone</h2>
+          <p style={{ color: "white" }}>+923334455666</p>
+        </div>
+        <div className="col-lg-4 payment-type">
+          <h2 style={{ color: "#f85706d3" }}>Payment Method</h2>
+          <img src="/images/visa.png" style={{ width: "55px" }} />
+          <img src="/images/mastercard.png" style={{ width: "55px" }} />
         </div>
       </div>
     </div>
